@@ -177,24 +177,10 @@
     <h1>Google FAQ</h1>
     <hr>
 
-    <?php 
-    //questions
-    foreach ($arrFAQ as $singleArr) {
-        foreach ( $singleArr as $key => $value) {
-            if($key == 'question') {
-                echo "<h3>{$value}</h3>";
-                //answers
-                foreach ($arrFAQ as $singleArr) {
-                    foreach ( $singleArr as $key => $value) {
-                        if($key == 'answer') {
-                            echo $value;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    ?>
+    <?php foreach ($arrFAQ as $singleArr) {
+        echo "<h3>{$singleArr['question']}</h3>";
+        echo $singleArr['answer'];
+    } ?>
 
 </body>
 </html>
