@@ -1,5 +1,5 @@
 <?php 
-    $arrayFAQ = [
+    $arrFAQ = [
 
         // Q&A 1
         [
@@ -176,6 +176,25 @@
 <body>
     <h1>Google FAQ</h1>
     <hr>
-    <?php echo $arrayFAQ[4]['answer']; ?>
+
+    <?php 
+    //questions
+    foreach ($arrFAQ as $singleArr) {
+        foreach ( $singleArr as $key => $value) {
+            if($key == 'question') {
+                echo "<h3>{$value}</h3>";
+                //answers
+                foreach ($arrFAQ as $singleArr) {
+                    foreach ( $singleArr as $key => $value) {
+                        if($key == 'answer') {
+                            echo $value;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ?>
+
 </body>
 </html>
